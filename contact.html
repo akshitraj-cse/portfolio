@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Akshit Raj</title>
+  <meta name="description" content="Get in touch with me for collaborations, projects, or opportunities.">
+
+  <meta property="og:title" content="Akshit Raj — Portfolio">
+  <meta property="og:description"
+    content="Akshit Raj — B.Tech CSE (AI/ML) student showcasing projects, skills, and achievements. Explore my projects, achievements, and connect with me via email, LinkedIn, GitHub, or Instagram.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://akshitraj.github.io/portfolio/">
+  <meta property="og:image" content="https://akshitraj.github.io/portfolio/thumbnail.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome Icons for Social & Form Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-name">AKSHIT RAJ</span>
+        <span class="logo-title">AI/ML STUDENT | ASPIRING SOFTWARE ENGINEER</span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="achievements.html" class="nav-link">Achievements</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link current">Contact</a>
+        <a href="contact.html" class="nav-hire">WORK WITH ME</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ 1. TOP SECTION ============ -->
+  <section class="page-header contact-header">
+    <h1 class="page-header-title">Get in Touch</h1>
+    <p class="page-header-subtitle">Let’s Connect & Collaborate</p>
+  </section>
+  <p class="about-paragraph" style="margin: 0 27rem -10px;">
+    I'm always open to new opportunities, collaborations, and conversations.
+    Whether it's about technology, projects, or ideas, feel free to reach out
+    — I'd be glad to connect.
+  </p>
+  <!-- ============ MAIN VERTICAL CONTACT CONTAINER ============ -->
+  <section class="contact">
+    <div class="container">
+      <div class="contact-container">
+
+        <!-- ============ 2. MIDDLE SECTION: FORM BOX ============ -->
+        <div class="contact-glass-card contact-form-wrap">
+          <form id="contact-form" class="contact-form" action="https://formspree.io/f/xeeyrqey" method="post">
+
+            <div class="form-group">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" name="message" class="form-textarea" placeholder="Type your message..."
+                required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-form btn-send">Send Message</button>
+
+          </form>
+
+          <div id="form-status"></div>
+        </div>
+
+
+        <!-- ============ 3. LOWER SECTION: CONNECT WITH ME BOX ============ -->
+        <div class="contact-glass-card contact-info-wrap contact-info">
+          <h2 class="connect-title"><u>Connect With Me</u></h2>
+
+          <div class="contact-direct-links">
+            <a href="mailto:hello@akshit.dev" class="contact-email">
+              <i class="fa-regular fa-envelope"></i> &nbsp;akshitraj0311@gmail.com
+            </a>
+
+            <a href="https://github.com/AkshitRaj02" class="contact-github" target="_blank">
+              <i class="fa-brands fa-github"></i> &nbsp;github.com/akshitraj-cse
+            </a>
+
+            <a href="https://www.linkedin.com/in/akshitraj05?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+              class="contact-linkedin" target="_blank">
+              <i class="fa-brands fa-linkedin"></i> &nbsp;linkedin.com/in/akshitraj05
+            </a>
+
+            <a href="https://www.instagram.com/akshit_raj_13?igsh=MTIwaWZwNWFsbm44bg==" class="contact-instagram"
+              target="_blank">
+              <i class="fa-brands fa-instagram"></i> &nbsp; akshit_raj_13
+            </a>
+          </div>
+
+          <!-- Socials / Quick Links with Red Hover Glow -->
+          <div class="contact-socials quick-links">
+            <a href="mailto:akshitraj0311@gmail.com" aria-label="Email" title="Direct Email" class="quick-link-btn">
+              <i class="fa-solid fa-paper-plane"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/akshitraj05?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+              target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn Profile"
+              class="quick-link-btn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/akshitraj-cse" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+              title="GitHub Profile" class="quick-link-btn">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.instagram.com/akshit_raj_13?igsh=MTIwaWZwNWFsbm44bg==" target="_blank"
+              rel="noopener noreferrer" aria-label="Instagram" title="Instagram Profile" class="quick-link-btn">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. FOOTER ============ -->
+  <footer class="footer">
+    <div class="back-to-top">
+      <a href="#" class="back-to-top-link" aria-label="Back to top">
+        <span class="back-to-top-text">Back to Top</span>
+        <span class="back-to-top-arrow">&uarr;</span>
+      </a>
+    </div>
+    <p class="footer-text">Let's Build Something Intelligent Together</p>
+
+    <div class="footer-socials">
+      <a href="https://github.com/akshitraj-cse" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+        title="GitHub Profile">
+        <img src="https://placehold.co/20x20/ffffff/000000?text=GH" alt="GitHub icon">
+      </a>
+      <a href="https://www.linkedin.com/in/akshitraj05?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+        target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn Profile">
+        <img src="https://placehold.co/20x20/ffffff/000000?text=IN" alt="LinkedIn icon">
+      </a>
+      <a href="https://www.instagram.com/akshit_raj_13?igsh=MTIwaWZwNWFsbm44bg==" target="_blank"
+        rel="noopener noreferrer" aria-label="Instagram" title="Instagram Profile">
+        <img src="https://placehold.co/20x20/ffffff/000000?text=IG" alt="Instagram icon">
+      </a>
+    </div>
+
+    <p class="footer-copy">&copy; <span id="year"></span> Akshit Raj. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

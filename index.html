@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Akshit Raj">
+  <meta name="description"
+    content="Akshit Raj — B.Tech CSE (AI/ML) student and aspiring software engineer. Explore my projects, achievements, and connect with me via email, LinkedIn, GitHub, and Instagram.">
+  <title>Akshit Raj — Portfolio</title>
+
+  <meta property="og:title" content="Akshit Raj — Portfolio">
+  <meta property="og:description"
+    content="Akshit Raj — B.Tech CSE (AI/ML) student showcasing projects, skills, and achievements. Explore my projects, achievements, and connect with me via email, LinkedIn, GitHub, or Instagram.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://akshitraj.github.io/portfolio/">
+  <meta property="og:image" content="https://akshitraj.github.io/portfolio/thumbnail.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <!-- This same navbar block is copy-pasted at the top of every page.
+     The only difference is which link has class="nav-link current" -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-name">AKSHIT RAJ</span>
+        <span class="logo-title">AI/ML STUDENT | ASPIRING SOFTWARE ENGINEER</span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link current">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="achievements.html" class="nav-link">Achievements</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="contact.html" class="nav-hire">WORK WITH ME </a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <h2 class="hero-background-text">PORTFOLIO</h2>
+
+    <div class="hero-container">
+      <div class="hero-text">
+        <p class="hero-greeting">Hello! &nbsp; I'm Akshit Raj</p>
+        <h1 class="hero-heading">Computer Science Student Focused on Intelligent Design</h1>
+        <pre class="hero-tagline">
+        Passionate about growth and innovation,
+        exploring AI/ML while shaping ideas into smart experiences, 
+        and developing skills to design tomorrow’s technology.</p>
+      <a href="projects.html" class="btn btn-red">View My Work</a>
+    </div>
+
+    <div class="hero-image">
+      <!-- 👉 Replace this src with your own photo or sketch portrait file -->
+      <img src="img/img2.png" alt="Portrait of Akshit" class="portrait-img">
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ FEATURED ABOUT (short preview, full version lives on about.html) ============ -->
+<section class="about">
+  <div class="container">
+    <p class="section-label"><u>About Me</u></p>
+    <h2 class="section-heading">A little about who I am</h2>
+    <p class="about-paragraph">
+      I’m Akshit Raj, a Computer Science student specializing in AI and Machine Learning.  
+Passionate about technology and innovation, I’m continuously learning and developing skills to design intelligent digital solutions.</p> 
+       <p class="about-paragraph" id="about-paragraph-2">
+      With a growing interest in technology and AI, I enjoy building projects that merge creativity with smart functionality. My goal is to evolve as an industry-ready software engineer & innovator and create impactful solutions for the future.
+    </p>
+    <!-- 👉 Link to the full About page -->
+    <a href="about.html" class="text-link">Read more about me &rarr;</a>
+  </div>
+</section>
+
+<!-- ============ FEATURED ACHIEVEMENTS (only 1 shown here, full list on projects.html) ============ -->
+<section class="projects">
+  <div class="container">
+    <p class="section-label"><u>Honors & Awards</u></p>
+    <h2 class="section-heading">Featured Achievements</h2>
+
+    <div class="achievements-grid">
+
+      <!-- Achievement 1 -->
+      <div class="achievement-card featured-achievements">
+        <div class="achievement-img-wrap">
+          <!-- 👉 Replace with a real photo of the certificate/trophy -->
+          <img src="img/badminton.jpeg" alt="Best Badminton Player Award trophy and certificate" class="achievement-img">
+        </div>
+        <p class="achievement-caption">Best Badminton Player Award</p>
+        <p class="achievement-description">Recognized for outstanding performance in badminton.</p>
+      </div>
+
+      <!-- Achievement 2 -->
+      <div class="achievement-card featured-achievements">
+        <div class="achievement-img-wrap">
+          <img src="img/computer.jpeg" alt="Best in Computer Interaction Design Award " class="achievement-img">
+        </div>
+        <p class="achievement-caption">Best in Computer Interaction Design Award</p>
+        <p class="achievement-description">Acknowledged for creative excellence and technical precision in computer interaction.</p>
+      </div>
+      </div>
+
+    <br>
+    <!-- 👉 Link to the full Achievements page -->
+    <a href="achievements.html" class="text-link">See all achievements &rarr;</a>
+  </div>
+</section>
+
+<!-- ============ FEATURED PROJECT (only 1 shown here, full list on projects.html) ============ -->
+<section class="projects">
+  <div class="container">
+    <p class="section-label"><u>My Work</u></p>
+    <h2 class="section-heading">Featured Project</h2>
+
+    <div class="project-grid single-column">
+      <div class="project-card">
+        <!-- 👉 Replace with a real screenshot of your featured project -->
+        <img src="img/img3.png" alt="Hospital Management System Thumbnail" class="project-img">
+        <div class="project-content">
+          <h3 class="project-title">Hospital Management System</h3>
+          <p class="project-desc">
+            A web-based application for managing hospital operations, including patient records, appointments, billing and many more.
+          </p>
+          <a href="hospitalproject.pdf" class="btn btn-red btn-small" target="_blank">View Project</a>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <!-- 👉 Link to the full Projects page -->
+    <a href="projects.html" class="text-link">See all projects &rarr;</a>
+  </div>
+</section>
+
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="back-to-top">
+    <a href="#" class="back-to-top-link" aria-label="Back to top">
+      <span class="back-to-top-text">Back to Top</span>
+      <span class="back-to-top-arrow">&uarr;</span>
+    </a>
+  </div>
+  <p class="footer-text">Let's Build Something Intelligent Together</p>
+
+  <div class="footer-socials">
+    <a href="https://github.com/akshitraj-cse" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub Profile">
+      <img src="https://placehold.co/20x20/ffffff/000000?text=GH" alt="GitHub icon">
+    </a>
+    <a href="https://www.linkedin.com/in/akshitraj05?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn Profile">
+      <img src="https://placehold.co/20x20/ffffff/000000?text=IN" alt="LinkedIn icon">
+    </a>
+    <a href="https://www.instagram.com/akshit_raj_13?igsh=MTIwaWZwNWFsbm44bg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram Profile">
+      <img src="https://placehold.co/20x20/ffffff/000000?text=IG" alt="Instagram icon">
+    </a>
+  </div>
+
+  <p class="footer-copy">&copy; <span id="year"></span> Akshit Raj. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

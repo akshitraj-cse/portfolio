@@ -1,0 +1,1280 @@
+/* =============================================================
+   AKSHIT PORTFOLIO — MAIN STYLESHEET
+   This one file is shared by every page (index, about, projects,
+   contact) so the whole site always looks consistent.
+
+   HOW THIS FILE IS ORGANISED (search for these headings):
+   1. Colors & Fonts (edit these to re-theme the whole site)
+   2. Reset & Basics
+   3. Buttons
+   4. Navbar
+   5. Hero (homepage top section)
+   6. Page Header (banner used on About / Projects / Contact pages)
+   7. About section
+   8. Projects section
+   9. Contact section
+   10. Footer
+   11. About Page Components
+   12. Achievements Page
+   13. Contact Page (Glassmorphism & Vertical Layout)
+   14. Responsive rules (mobile & tablet)
+   ============================================================= */
+
+
+/* =============================================================
+   1. COLORS & FONTS
+   Change a value here and it updates everywhere on the site.
+   ============================================================= */
+:root {
+  --color-black: #060606;
+  /* main background */
+  --color-black-soft: #0c0c0c;
+  /* slightly lighter background */
+  --color-card: #121212;
+  /* card / box background */
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-red: #e50914;
+  /* the accent color used everywhere */
+  --color-white: #f6f6f6;
+  --color-grey: #9a9a9a;
+  /* muted text */
+
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --max-width: 1200px;
+  /* content never gets wider than this */
+  --navbar-height: 84px;
+}
+
+
+/* =============================================================
+   2. RESET & BASICS
+   ============================================================= */
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+  /* Prevents layout shifting across page navigation */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-black);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* A simple reusable wrapper that centers content and adds side padding */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Small red label used above section titles, e.g. "About Me" */
+.section-label {
+  color: var(--color-red);
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 1.15rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  text-decoration: underline;
+}
+
+.section-heading {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  margin-bottom: 20px;
+}
+
+
+/* =============================================================
+   3. BUTTONS
+   Add class="btn btn-red" or "btn btn-outline" to any <a> or <button>
+   ============================================================= */
+.btn {
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 100px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.25s ease;
+  position: relative;
+  left: 14px;
+  /* nudges the button slightly to the left for better alignment with the text */
+}
+
+.btn-red {
+  background: var(--color-red);
+  color: var(--color-white);
+}
+
+.btn-red:hover {
+  background: #ff1622;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-white);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-red);
+  color: var(--color-red);
+}
+
+.btn-small {
+  padding: 10px 22px;
+  font-size: 0.8rem;
+}
+
+/* A plain text link with an arrow, used for "See all projects ->" etc */
+.text-link {
+  color: var(--color-red);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+
+/* =============================================================
+   4. NAVBAR
+   ============================================================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--navbar-height);
+  display: flex;
+  align-items: center;
+  background: rgba(6, 6, 6, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 100;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-name {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.logo-title {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--color-red);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.nav-link {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-grey);
+}
+
+.nav-link:hover,
+.nav-link.current {
+  color: var(--color-white);
+}
+
+.nav-hire {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-red);
+  border: 1px solid var(--color-red);
+  padding: 9px 18px;
+  border-radius: 100px;
+}
+
+.nav-hire:hover {
+  background: var(--color-red);
+  color: var(--color-white);
+}
+
+/* Hamburger icon (only shows on mobile — see the responsive section) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 2px;
+  background: var(--color-white);
+  transition: all 0.3s ease;
+}
+
+/* When JS adds the "open" class, turn the 3 lines into an X */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* =============================================================
+   5. HERO (big top section — homepage only)
+   ============================================================= */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: var(--navbar-height);
+  /* overflow: hidden; */
+}
+
+/* Giant faint "PORTFOLIO" text sitting behind the hero content */
+.hero-background-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(4rem, 15vw, 12rem);
+  color: transparent;
+  -webkit-text-stroke: 3.5px rgba(255, 255, 255, 0.07);
+  white-space: nowrap;
+  z-index: 0;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 40px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-greeting {
+  color: var(--color-red);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.hero-heading {
+  font-size: clamp(2rem, 4.3vw, 3.4rem);
+  margin-bottom: 20px;
+  max-width: 1000px;
+}
+
+.hero-tagline {
+  color: var(--color-grey);
+  font-size: 1.05rem;
+  max-width: 520px;
+  margin-bottom: 32px;
+  margin-top: 42px;
+  position: relative;
+  left: -40px;
+  font-family: var(--font-body);
+  white-space: pre-wrap;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  right: -100px;
+  /* nudges the image slightly off the right edge of the grid */
+}
+
+.portrait-img {
+  width: 100%;
+  max-width: 400px;
+  height: 39rem;
+}
+
+
+/* =============================================================
+   6. PAGE HEADER
+   The simple title banner used at the top of About / Projects /
+   Contact pages (anything that isn't the homepage hero).
+   ============================================================= */
+.page-header {
+  padding: 160px 0 60px;
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.page-header .section-label {
+  display: block;
+}
+
+.page-header h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.page-header-title {
+  color: var(--color-red);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  margin-bottom: 10px;
+}
+
+.page-header-subtitle {
+  color: var(--color-grey);
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+
+/* =============================================================
+   7. ABOUT SECTION
+   Used both as the full About page and the short homepage preview
+   ============================================================= */
+.about {
+  padding: 100px 0;
+}
+
+.about-paragraph {
+  color: var(--color-grey);
+  max-width: 650px;
+  margin-bottom: 15px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skills-list span {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  border: 1px solid var(--color-border);
+  padding: 8px 18px;
+  border-radius: 100px;
+}
+
+.skills-list span:hover {
+  border-color: var(--color-red);
+  color: var(--color-red);
+}
+
+
+/* =============================================================
+   8. PROJECTS SECTION
+   Used both as the full Projects page and the homepage preview
+   ============================================================= */
+.projects {
+  padding: 40px 0 100px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.project-grid.single-column {
+  grid-template-columns: 1fr;
+  max-width: 500px;
+}
+
+.project-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+
+.project-img {
+  width: 100%;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.project-content {
+  padding: 24px;
+}
+
+.project-title {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.project-desc {
+  color: var(--color-grey);
+  font-size: 0.92rem;
+  margin-bottom: 20px;
+}
+
+.projects-intro {
+  color: var(--color-grey);
+  max-width: 700px;
+  margin-bottom: 40px;
+  text-align: center;
+  position: relative;
+  left: 22%;
+}
+
+.projects-intro-1 {
+  color: var(--color-grey);
+  max-width: 700px;
+  margin-top: -40px;
+  margin-bottom: 40px;
+  text-align: center;
+  position: relative;
+  left: 22%;
+}
+
+
+/* =============================================================
+   9. CONTACT SECTION
+   ============================================================= */
+.contact {
+  padding: 80px 0 120px;
+}
+
+
+/* =============================================================
+   10. FOOTER
+   ============================================================= */
+.footer {
+  border-top: 1px solid var(--color-border);
+  background: var(--color-black-soft);
+  padding: 50px 24px 30px;
+  text-align: center;
+}
+
+.footer-text {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.footer-socials a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
+  transition: all 0.25s ease;
+}
+
+.footer-socials a:hover {
+  background: var(--color-red);
+  border-color: var(--color-red);
+}
+
+.footer-copy {
+  color: var(--color-grey);
+  font-size: 0.8rem;
+}
+
+.back-to-top {
+  margin-bottom: 7px;
+  padding: 12px 0;
+  position: relative;
+  top: -40px;
+  color: rgba(165, 176, 176, 0.9);
+  border-bottom: 2px solid gray;
+}
+
+.back-to-top:hover {
+  text-decoration: underline;
+}
+
+
+/* =============================================================
+   11. ABOUT PAGE COMPONENTS
+   ============================================================= */
+.about-intro {
+  padding: 80px 0;
+}
+
+.about-intro-grid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.portrait-img-2 {
+  width: 17rem;
+  height: 320px;
+  border-radius: 14px;
+  border: 4px solid rgb(245, 185, 185);
+  object-fit: cover;
+  object-position: 50% 25%;
+  position: relative;
+  right: -220px;
+}
+
+.intro-text {
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.info-box {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 30px;
+  transition: border-color 0.25s ease;
+}
+
+.info-box:hover {
+  border-color: var(--color-red);
+}
+
+.info-box-title {
+  font-size: 1.15rem;
+  color: var(--color-red);
+  margin-bottom: 18px;
+}
+
+.skills-section {
+  padding: 40px 0 80px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.skill-tag-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag-list li {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  border: 1px solid rgba(229, 9, 20, 0.35);
+  padding: 8px 16px;
+  border-radius: 100px;
+  color: var(--color-white);
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.skill-tag-list li:hover {
+  border-color: var(--color-red);
+  color: var(--color-red);
+}
+
+.edu-exp-section {
+  padding: 0 0 80px;
+  margin-top: 45px;
+}
+
+.edu-exp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.edu-exp-column {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 30px;
+  transition: border-color 0.25s ease;
+}
+
+.edu-exp-column:hover {
+  border-color: var(--color-red);
+}
+
+.timeline-item {
+  margin-bottom: 22px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.98rem;
+  margin-bottom: 4px;
+}
+
+.timeline-meta {
+  color: var(--color-grey);
+  font-size: 0.88rem;
+}
+
+.resume-section {
+  padding: 0 0 120px;
+  text-align: center;
+  margin-top: 65px;
+}
+
+.resume-container {
+  max-width: 80rem;
+  padding: 40px 24px;
+  border: 1px solid gray;
+  border-radius: 21px;
+  background-color: var(--color-card);
+}
+
+.resume-container:hover{
+  border-color: rgb(191, 41, 41);
+}
+.btn-resume {
+  background: transparent;
+  border: 1px solid var(--color-red);
+  color: var(--color-red);
+  margin-top: 10px;
+}
+
+.btn-resume:hover {
+  background: var(--color-red);
+  color: var(--color-white);
+}
+
+
+/* =============================================================
+   12. ACHIEVEMENTS PAGE
+   ============================================================= */
+.achievements-section {
+  padding: 20px 0 100px;
+}
+
+.achievements-intro {
+  color: var(--color-grey);
+  max-width: 700px;
+  margin-bottom: 40px;
+  text-align: center;
+  position: relative;
+  left: 20%;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1.2fr);
+  gap: 28px;
+}
+
+.achievement-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-red);
+  transform: scale(1.09);
+}
+
+.achievement-img-wrap {
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.achievement-img {
+  width: 100%;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  filter: grayscale(20%);
+}
+
+.achievement-card:hover .achievement-img {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+
+.achievement-caption {
+  padding: 20px 22px;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-white);
+}
+
+.achievement-description {
+  padding: 0 22px 10px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: rgb(174, 171, 171);
+  position: relative;
+  top: -15px;
+}
+
+.featured-achievements {
+  width: 450px;
+  height: 480px;
+}
+
+
+/* =============================================================
+   13. CONTACT PAGE (GLASSMORPHISM & VERTICAL LAYOUT)
+   ============================================================= */
+.contact-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  color: var(--color-white);
+  margin-bottom: 8px;
+}
+
+.contact-subtitle {
+  color: var(--color-red);
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 1024px) {
+  .contact-header+p.about-paragraph {
+    margin: 20px auto !important;
+    max-width: 600px;
+    padding: 0 24px;
+    text-align: center;
+  }
+}
+
+.contact-tagline {
+  color: var(--color-grey);
+  font-size: 0.98rem;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* Vertical Stacked Layout */
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Glassmorphism Box Styling */
+.contact-glass-card,
+.contact-form-wrap,
+.contact-info-wrap {
+  background: rgba(18, 18, 18, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 36px;
+  margin-top: -19px;
+  margin-bottom: 40px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-glass-card:hover,
+.contact-form-wrap:hover,
+.contact-info-wrap:hover {
+  border-color: rgba(229, 9, 20, 0.4);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(229, 9, 20, 0.1);
+}
+
+.contact-form {
+  border: none;
+  /* overrides generic box borders if present */
+}
+
+.form-group {
+  margin-bottom: 22px;
+  text-align: left;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--color-white);
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  background: rgba(6, 6, 6, 0.7);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 14px 18px;
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--color-red);
+  background: rgba(12, 12, 12, 0.9);
+  box-shadow: 0 0 12px rgba(229, 9, 20, 0.3);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+/* Contact Button with Red Hover Glow */
+.btn-form,
+.btn-send {
+  display: block;
+  width: 100%;
+  background: var(--color-black-soft);
+  border: 1px solid var(--color-red);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 14px 28px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  left: 0;
+  /* Centered in container */
+  text-align: center;
+}
+
+.btn-form:hover,
+.btn-send:hover {
+  background: var(--color-red);
+  color: var(--color-white);
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Connect With Me (Lower Section) */
+.contact-info {
+  text-align: center;
+  padding-top: 0;
+  border-top: none;
+  max-width: 100%;
+  margin: 0;
+}
+
+.connect-title {
+  font-size: 1.25rem;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  color: var(--color-red);
+  margin-bottom: 20px;
+  padding-top: 40px;
+  text-transform: uppercase;
+}
+
+.contact-direct-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+  margin-top: 30px;
+  border-bottom: 0.8px solid rgb(75, 74, 74);
+  padding-bottom: 36px;
+}
+
+.contact-email,
+.contact-linkedin,
+.contact-github,
+.contact-instagram {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: whitesmoke;
+  margin-bottom: 0;
+  display: inline-block;
+  transition: opacity 0.25s ease;
+}
+
+.contact-email:hover,
+.contact-linkedin:hover,
+.contact-github:hover,
+.contact-instagram:hover {
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
+/* Social & Quick Links Hover Glow Effect */
+.contact-socials,
+.quick-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: -2px;
+}
+
+.contact-socials a,
+.quick-link-btn {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  background: rgba(6, 6, 6, 0.5);
+  border-radius: 50%;
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.contact-socials a:hover,
+.quick-link-btn:hover {
+  background: var(--color-red);
+  border-color: var(--color-red);
+  color: var(--color-white);
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.6);
+  transform: translateY(-3px);
+}
+
+/* Optional Footer Utilities */
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 20px auto 0;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.privacy-link {
+  color: var(--color-grey);
+  font-size: 0.8rem;
+  transition: color 0.25s ease;
+}
+
+.privacy-link:hover {
+  color: var(--color-red);
+}
+
+
+/* =============================================================
+   14. RESPONSIVE RULES (UPDATED)
+   Tablet: screens 1024px and below
+   Mobile: screens 640px and below
+   Small phones: screens 400px and below
+   ============================================================= */
+
+/* ---- Tablet ---- */
+@media (max-width: 1024px) {
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .hero-image {
+    order: -1;
+    /* show image above text on smaller screens */
+    margin-bottom: 20px;
+  }
+
+  .portrait-img {
+    max-width: 320px;
+    height: 420px;
+    /* was a fixed 39rem (624px) -- far too tall once width shrinks */
+    margin: 0 auto;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* About page: your intro is now display:flex (not grid), so it needs
+     flex-direction switched to stack correctly, and the portrait's
+     desktop-only "right: -220px" offset needs resetting so it doesn't
+     get pushed off-screen. */
+  .about-intro-grid {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .about-portrait {
+    order: -1;
+    /* show portrait above text on smaller screens */
+    margin: 0 auto;
+  }
+
+  .portrait-img-2 {
+    right: 0;
+    width: 100%;
+    max-width: 320px;
+    height: 320px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .edu-exp-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* Achievements: 2 columns fits tablets nicely, drops to 1 at mobile below */
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* The homepage's featured-achievements cards have a fixed 450x480px
+     size meant for desktop -- let them shrink with their column instead */
+  .featured-achievements {
+    width: 100%;
+    height: auto;
+  }
+
+  /* These three all use "position: relative; left: 20-22%" to nudge
+     them over on wide desktop layouts -- on a narrower screen that
+     shove sends the text half off the page, so reset it here */
+  .projects-intro,
+  .projects-intro-1,
+  .achievements-intro {
+    left: 0;
+    max-width: 100%;
+    padding: 0 12px;
+  }
+
+  /* Turn the nav menu into a slide-in panel */
+  .nav-menu {
+    position: fixed;
+    top: var(--navbar-height);
+    right: 0;
+    height: calc(100vh - var(--navbar-height));
+    width: 260px;
+    background: var(--color-black-soft);
+    border-left: 1px solid var(--color-border);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 24px;
+    gap: 28px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-menu.open {
+    transform: translateX(0);
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 640px) {
+
+  .hero-container {
+    padding: 20px 20px;
+  }
+
+  .hero-background-text {
+    font-size: clamp(3rem, 20vw, 5rem);
+  }
+
+  .portrait-img {
+    max-width: 260px;
+    height: 340px;
+  }
+
+  .page-header {
+    padding: 130px 0 40px;
+  }
+
+  .about,
+  .contact {
+    padding: 60px 0;
+  }
+
+  .projects {
+    padding: 20px 0 60px;
+  }
+
+  .about-intro {
+    padding: 50px 0;
+  }
+
+  .portrait-img-2 {
+    max-width: 260px;
+    height: 260px;
+  }
+
+  .skills-section,
+  .edu-exp-section {
+    padding-bottom: 50px;
+  }
+
+  .info-box,
+  .edu-exp-column {
+    padding: 22px;
+  }
+
+  .resume-section {
+    padding-bottom: 70px;
+  }
+
+  .resume-container {
+    padding: 30px 20px;
+  }
+
+  .achievements-section {
+    padding: 10px 0 60px;
+  }
+
+  /* Below tablet's 2 columns, achievements drop to a single column */
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-glass-card,
+  .contact-form-wrap,
+  .contact-info-wrap {
+    padding: 24px 18px;
+  }
+
+  .connect-title {
+    padding-top: 24px;
+  }
+
+  .footer-row {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ---- Small phones ---- */
+@media (max-width: 400px) {
+
+  /* Long subtitle next to the logo can wrap awkwardly on very
+     narrow screens -- shrink it and stop it wrapping mid-word */
+  .logo-title {
+    font-size: 0.52rem;
+    max-width: 170px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .hero-heading {
+    font-size: 1.8rem;
+  }
+
+  .contact-glass-card,
+  .contact-form-wrap,
+  .contact-info-wrap {
+    padding: 20px 14px;
+  }
+
+  .contact-socials a,
+  .quick-link-btn {
+    width: 40px;
+    height: 40px;
+  }
+}
