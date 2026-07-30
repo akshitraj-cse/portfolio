@@ -6,7 +6,7 @@ I am a B.Tech CSE (AI/ML) student at Amity University, passionate about software
 This site showcases my projects, achievements, and skills as I build my journey toward becoming an industry-ready developer.
 
 ## 🔗 Live Site
-[https://akshitraj-cse.github.io/Portfolio](https://akshitraj-cse.github.io/Portfolio)
+[https://akshitraj-cse.github.io/Portfolio](https://akshitraj-cse.github.io/portfolio/)
 
 ## 🚀 Highlights
 - Responsive portfolio built with HTML, CSS and JAVASCRIPT
